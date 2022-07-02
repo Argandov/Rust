@@ -1,0 +1,28 @@
+// Data types
+
+fn main() {
+    let integer = 1;
+    let floatNum = 13.12;
+    let myString = "hello world";
+    let myList = [1, 2, 4];
+    let myTuple = (1, 2, 3);
+
+    // Create vas on the fly
+    let myNumber = myList[1];
+    let (x, y, z) = myTuple; 
+
+    println!("{}", z);
+    println!("{}", myNumber);
+
+    printer("hello world!")
+}
+
+// Specifying integer size (Can be called with adder(6);) "i8 -> integer 8 bit"
+fn adder(x: i8){
+    println!("{}", x + x);
+}
+
+// Specifying type of arg, and disregarding byte size with &type
+fn printer(msg: &str){
+    println!("{}", msg);
+}
