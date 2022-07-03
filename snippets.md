@@ -83,12 +83,20 @@ fn stealer(val: String) -> String {
     val // Simply return the same value
 }
 
-// Used for stack values
+// Used for stack values (Values "known at compile time")
 fn to_copy(val: &str) -> &str {
     println!("> {} was copied", val);
     val // Simply return the same value
 }
+```
 
+```rust
+fn main() {
+    let my_val = String::from("Hello world");
+    let x: &str = &my_val; // Borrowed my_val, so it is still valid
+    let x = &my_val; // Second option, 
 
-
+    println!("{}", x);
+    println!("{}", my_val); // my_val is still valid
+}
 ```
