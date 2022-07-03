@@ -37,3 +37,59 @@ fn main() {
     println!("\nAddress Location: {:p}", &x); // Exact address of the pointer
 }
 ```
+
+## Pretty printing
+
+```rust
+fn main() {
+    // Quick referencing variables inside a print statement:
+    println!("My name is {name} {lastName}, and I'm {age} y.o",
+        name = "Jean",
+        lastName = "Serz",
+        age = 189
+    );
+    
+    // Using variables more than once inside print statements
+    let country_i_like = "France";
+    let favourite_country = "Australia";
+    println!(
+    "I like {0}, but I like {1} more. {1} is better than {0}", 
+        country_i_like, 
+        favourite_country
+        ); // Or:
+    
+    // Ugly way of doing things:
+    let x = 16;
+    println!("{} is at {:p} and its value in hex is {:x}", x,&x,x);
+    
+    // Printing with paddings:
+    let t = "Hi!";
+    println!("{:_>16}", t); // _____________Hi!
+    println!("{:_^16}", t); // ______Hi!_______
+    println!("{:_<16}", t); // Hi!_____________
+    
+    let a = "dog";
+    println!("{:*>4}",a); // 4 is the total length (-> *dog)
+        
+    let pipe = "|";
+    println!("{: <2}{: >2}",pipe,pipe); // Simply 2 buffers of 2 chars -> "|  |"
+    
+    // Horrible:
+    println!(
+"Name: {Name_Variable:->10}
+Second Name: {Second_Name:->10}",
+        Name_Variable = "Jean",
+        Second_Name = "Soltz");
+    // Name: ------Jean
+    // Second Name: -----Soltz 
+        
+        
+        
+    // Better:
+    let Name = "Jean";
+    println!("{Key:_<10}{Value:_>10}",
+    Key = "Name:",
+    Value = Name); // Name:___________Jean
+}
+```
+    println!(r#"C:\Users\text.txt"#);
