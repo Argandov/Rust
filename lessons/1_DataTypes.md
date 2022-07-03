@@ -1,5 +1,6 @@
+Casting, primitive types, floats, data declarations
 
-Casting and primitive types:
+## Casting and primitive types:
 ```rust
 // Casting and data types
 fn main() {
@@ -22,7 +23,7 @@ fn main() {
     data_types();
 }
 ```
-Data types, declarations and float numbers:
+## Data types, declarations and float numbers:
 ```rust
 fn data_types() {
     let x: usize = 12; // usize: Architecture's length (32 or 64 bit)
