@@ -1,6 +1,9 @@
 Printing & pretty printing
 
 ## Memory & byte size for types:
+
+Using [std::mem memory module functions](https://doc.rust-lang.org/std/mem/index.html#functions) (From official docs)
+
 ```rust
 // Memory & byte size for default types:
 fn main() {
