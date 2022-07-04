@@ -1,5 +1,28 @@
 Printing & pretty printing
 
+## Memory & byte size for types:
+```rust
+// Memory & byte size for default types:
+fn main() {
+    let v1 = std::mem::size_of::<String>();
+    println!("Strings are {:?} bytes long",v1);
+    
+    let v1 = std::mem::size_of::<&str>();
+    println!("&str's are {v1} bytes long");
+    
+    let v1 = std::mem::size_of::<i8>();
+    println!("i8's are {v1} bytes long");
+    
+    let v1 = std::mem::size_of_val("β");
+    println!(r#"> &str "β" is {v1} bytes long"#);
+    
+    let v0 = String::from("β");
+    let v1 = std::mem::size_of::<v0>();
+    println!(r#"> String "β" is {v1} bytes long"#);
+}
+```
+---
+
 ## Raw printing, unicode and UTF-8
 
 ```rust
@@ -95,25 +118,5 @@ Second Name: {Second_Name:->10}",
     println!(r#"C:\Users\text.txt"#);
 
 
-## Memory & byte size for types:
-```rust
-// Memory & byte size for default types:
-fn main() {
-    let v1 = std::mem::size_of::<String>();
-    println!("Strings are {:?} bytes long",v1);
-    
-    let v1 = std::mem::size_of::<&str>();
-    println!("&str's are {v1} bytes long");
-    
-    let v1 = std::mem::size_of::<i8>();
-    println!("i8's are {v1} bytes long");
-    
-    let v1 = std::mem::size_of_val("β");
-    println!(r#"> &str "β" is {v1} bytes long"#);
-    
-    let v0 = String::from("β");
-    let v1 = std::mem::size_of::<v0>();
-    println!(r#"> String "β" is {v1} bytes long"#);
-}
-```
+
         ); // Or:
