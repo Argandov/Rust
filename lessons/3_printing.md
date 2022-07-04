@@ -118,8 +118,13 @@ Second Name: {Second_Name:->10}",
     Value = Name); // Name:___________Jean
 }
 ```
-    println!(r#"C:\Users\text.txt"#);
 
-
-
-        ); // Or:
+## Format! method
+```rust
+fn main() {
+                // Formatting a string:
+    let my_str = format!("{} is a {}", "hello", "salutation");
+    
+    println!("{}", my_str);
+}
+```
