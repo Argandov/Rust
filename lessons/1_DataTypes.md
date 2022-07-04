@@ -1,4 +1,5 @@
 Casting, primitive types, floats, data declarations
+const && static
 
 ## Casting and primitive types:
 ```rust
@@ -48,5 +49,17 @@ fn floats(){
    let y = 7.32; // f64 by default
    let sum = x as f64 + y as f64; // Casting and making them even
    // println!("{sum}");
+}
+```
+
+## Const && Static
+
+```rust
+// type must be declared for const && static
+const MY_CONSTANT: i8 = 19;
+static LIST: [&str; 3] = ["hello", "world", "foo", "bar"];
+
+fn main() {
+    println!("{MY_CONSTANT}");
 }
 ```
