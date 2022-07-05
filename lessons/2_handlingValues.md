@@ -1,6 +1,8 @@
 # 
 
-Functions, return values, debugging, referencing, shadowing, ownership
+Functions, return values, debugging, shadowing, ownership
+
+referencing, mutable references
 
 ## Functions, return values and debugging
 
@@ -41,7 +43,22 @@ fn deb() {
 ```
 
 ## Shadowing
+
 Shadowing: re-assigning a variable twice with the same name
+
+```rust
+fn main() {
+    let x = 4;
+    let x_ref = &x;
+    
+    let x = "Hello";
+    
+    println!("{}", x);
+    println!("{}", x_ref);
+}
+```
+In-Scope and out of scope shadowing
+
 ```rust
 fn main() {
     let x = 12;
@@ -67,7 +84,30 @@ fn shadower() -> i8 {
 }
 ```
 
-## References & De-references
+Shadowing, referencing and address location (Same as first Shadowing example but with more information):
+
+```rust
+// Taking a variable, assigning another to its reference, shadowing it and showing its memory address
+fn main() {
+    // First Var and its Address in mem:
+    let var = String::from("X is an X");
+    println!("# {:p} | Variable's Address", &var);
+    let var_ref = &var;
+    println!("# {:p} | Variable reference's Address", &var_ref);
+    
+    // Shadowing the original Var twice and showing its memory:
+    let var = 12; 
+    println!("# {:p} | 1 Shadowing variable's Address", &var);
+    let var = 120; 
+    println!("# {:p} | 2 Shadowing variable's Address", &var);
+    //
+    println!("{var}"); // Original var got shadowed (twice)
+    println!("{var_ref}"); // Original reference is still intact
+}
+
+```
+
+## References & De-references, mutable references
 
 ```rust
 fn main() {
@@ -80,6 +120,15 @@ fn main() {
     println!("{:?}", ***RRRx == x ); // true (De-referenced 3 times = original value)
     println!("{}", RRRx); // 12
 }
+
+fn main() {
+    let mut x = 1;
+    let x1 = &mut x; // Mutable Reference
+    *x1 += 10;
+    
+    println!("{}", x1);
+}
+
 ```
 
 ## Ownership & Functions
