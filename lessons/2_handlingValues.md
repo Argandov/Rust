@@ -176,3 +176,18 @@ fn main() {
     println!("{}", my_val); // my_val is still valid
 }
 ```
+
+Passing Pointers of Vars to functions to keep ownership:
+```rust
+fn main () {
+    let x = String::from("hello");
+    print(&x); // Passing only the pointer to the function
+    
+    // The variable didn't change ownership
+    println!("b) <{}> From main() Function.", x);
+}
+
+fn print(x: &String) {
+    println!("a) <{}> From inside print() function", x);
+}
+```
