@@ -22,3 +22,13 @@ fn main() {
     println!("{}", myInfo);
 } 
 ```
+
+```rust
+struct Country {
+    population: i32,
+    name: &str
+    }
+    
+
+
+```
